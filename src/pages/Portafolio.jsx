@@ -24,13 +24,28 @@ const Contenedor = styled.div`
   row-gap: 3rem;
 `
 
-export const loader = async() => {
-  try {
-    const {data: {proyectos}} = await axios('../../db.json')
-    return proyectos
-  } catch (error) {
-    console.log(error)
-  }
+export const loader = async () => {
+  return [{
+    id: 1,
+    titulo: "Pagina de Salón de Belleza",
+    enlace: "https://bryanllana.github.io/pagina_bella",
+    imagen: "salon.png"
+  }, {
+    id: 2,
+    titulo: "App de Presupuesto",
+    enlace: "https://bryanllana.github.io/presupuesto-react",
+    imagen: "presupuesto.png"
+  }, {
+    id: 3,
+    titulo: "App Cotizador",
+    enlace: "https://bryanllana.github.io/cotizador-react",
+    imagen: "cotizador.png"
+  }, {
+    id: 4,
+    titulo: "App Clima",
+    enlace: "https://bryanllana.github.io/clima-react",
+    imagen: "clima.png"
+  }]
 }
 
 const Portafolio = () => {
@@ -41,7 +56,7 @@ const Portafolio = () => {
       <Titulo>Mis Proyectos</Titulo>
       <Contenedor>
         {proyectos.map(proyecto => (
-          <Proyecto key={proyecto.id} proyecto={proyecto}/> 
+          <Proyecto key={proyecto.id} proyecto={proyecto} />
         ))}
       </Contenedor>
     </Proyectos>
