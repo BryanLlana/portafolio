@@ -37,7 +37,7 @@ const Proyecto = ({ proyecto }) => {
     return (
         <ContenedorProyecto>
             <div>
-                <img src={`/img/${imagen}`} alt="" />
+                <img src={`./img/${imagen}`} alt="" />
             </div>
             <Contenido>
                 <h3>{titulo}</h3>

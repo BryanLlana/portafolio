@@ -1,4 +1,4 @@
-import { Form, redirect, useActionData } from "react-router-dom"
+import { Form, redirect, useActionData, useNavigate } from "react-router-dom"
 import styled from '@emotion/styled'
 import usePortafolio from "../hooks/usePortafolio"
 import axios from "axios"
@@ -71,7 +71,7 @@ export const action = async ({ request }) => {
     
     try {
         const data  = await axios.post(`${import.meta.env.VITE_API_URL}/auth/login`, datos)
-        return redirect('/')
+        return true
     } catch (error) {
         errores = [...errores, 'Usuario no encontrado']
     }
@@ -83,8 +83,14 @@ export const action = async ({ request }) => {
 
 const Login = () => {
 
-    const { handleChange } = usePortafolio()
+    const { handleChange, setAutenticacion } = usePortafolio()
+    const navigate = useNavigate()
     const errores = useActionData()
+
+    if(errores == true){
+        setAutenticacion(true)
+        navigate('/')
+    }
 
     return (
         <Contenedor>

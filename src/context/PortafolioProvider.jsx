@@ -16,6 +16,7 @@ export const PortafolioProvider = ({ children }) => {
   })
 
   const [exitoContacto, setExitoContacto] = useState(false)
+  const [autenticacion, setAutenticacion] = useState(false)
 
   const handleChange = e => {
     setDatos({
@@ -38,7 +39,9 @@ export const PortafolioProvider = ({ children }) => {
       exitoContacto,
       setExitoContacto,
       datosContacto, 
-      setDatosContacto
+      setDatosContacto,
+      autenticacion, 
+      setAutenticacion
     }}>
       {children}
     </PortafolioContext.Provider>

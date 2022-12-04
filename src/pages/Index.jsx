@@ -3,7 +3,6 @@ import Contacto from "./Contacto"
 import Portafolio from "./Portafolio"
 
 const Index = () => {
-  
   return (
     <>
       <Biografia />
