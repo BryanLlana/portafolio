@@ -89,7 +89,7 @@ const Login = () => {
 
     if(errores == true){
         setAutenticacion(true)
-        navigate('/')
+        navigate('/portafolio')
     }
 
     return (
